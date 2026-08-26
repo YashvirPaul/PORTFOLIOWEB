@@ -1,0 +1,52 @@
+.hero h1 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(36px);
+  animation: headline-in .75s cubic-bezier(.2,.8,.2,1) forwards;
+}
+.hero h1 span:nth-of-type(2) { animation-delay: .18s; }
+.hero h1 span:nth-of-type(3) { animation-delay: .36s; }
+.hero h1 span:nth-of-type(4) { animation-delay: .54s; }
+@keyframes headline-in { to { opacity: 1; transform: translateY(0); } }
+.hero h1 em {
+  display: inline-block;
+  color: transparent;
+  background: linear-gradient(110deg, #f7eee2 18%, #fff 42%, #dcc7ad 57%, #fff 72%, #f7eee2 90%);
+  background-size: 260% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px #fff9);
+  animation: faster-shine 3.4s ease-in-out .9s infinite;
+}
+@keyframes faster-shine {
+  0%, 35% { background-position: 100% 0; }
+  65%, 100% { background-position: 0 0; }
+}
+.portrait-image {
+  background: linear-gradient(0deg, #17120f33, transparent 55%), url("yashvir-paul.jpg") center 35% / 165% no-repeat;
+  display: grid;
+  place-items: center;
+  color: transparent;
+  font-size: 0;
+}
+.footer-bottom a { color: #f9f5ed; text-decoration: none; }
+.footer-bottom a:hover { color: #e4ba67; }
+.closing-founder {
+  padding: 95px max(7vw, 30px);
+  background: #f2c970;
+  display: grid;
+  grid-template-columns: minmax(260px, .75fr) 1.25fr;
+  gap: clamp(36px, 9vw, 130px);
+  align-items: center;
+}
+.closing-photo { max-width: 420px; border-radius: 220px 220px 16px 16px; overflow: hidden; box-shadow: 18px 18px 0 #d9735c; }
+.closing-photo img { display: block; width: 100%; aspect-ratio: .8; object-fit: cover; object-position: center 35%; transform: scale(1.62); transform-origin: center 35%; }
+.closing-copy { max-width: 630px; }
+.closing-copy h2 { font-size: clamp(43px, 5.4vw, 74px); margin: 15px 0 22px; }
+.closing-copy h2 em { color: #d86f57; }
+.closing-copy > p:not(.kicker):not(.closing-signature) { color: #54472c; line-height: 1.7; max-width: 520px; }
+.closing-signature { margin-top: 35px; font: italic 500 26px "Playfair Display", serif; }
+.closing-signature span { display: block; margin-top: 5px; font: 11px "DM Sans", sans-serif; font-style: normal; text-transform: uppercase; letter-spacing: .08em; }
+@media (max-width: 760px) { .closing-founder { grid-template-columns: 1fr; padding: 80px 24px; } .closing-photo { max-width: 330px; } }
+.about { grid-template-columns: 1fr; }
+.about .portrait { display: none; }
