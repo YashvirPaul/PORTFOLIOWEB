@@ -1,75 +1,1020 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Yashvir Paul — AI automation systems built around your business." />
-  <title>Yashvir Paul — AI Automation Studio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yashvir Paul — AI Voice Agents, Meta & Google Ads, Video Editing & Automation</title>
+  <meta name="description"
+    content="Yashvir Paul builds custom AI voice agents, high-performing Meta & Google Ad campaigns, viral short & long-form video edits, and autonomous business workflows.">
+  <meta property="og:title" content="Yashvir Paul — AI Systems & Media Studio">
+  <meta property="og:description"
+    content="Autonomous AI voice agents, Meta & Google Ads, viral video editing, and end-to-end automations built custom by Yashvir Paul.">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101010'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-size='32' fill='%23C6F24E' text-anchor='middle' font-style='italic'%3EYP%3C/text%3E%3C/svg%3E">
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="overrides.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
-  <header class="nav-wrap" id="top">
-    <nav class="nav" aria-label="Main">
-      <a class="brand" href="#top">Yashvir Paul</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-      <div class="nav-links"><a href="#services">Services</a><a href="#about">About</a><a href="#work">Demos</a><a href="#faq">FAQ</a></div>
-      <a class="nav-cta" href="https://wa.me/919394389413" target="_blank" rel="noopener">WhatsApp <span>→</span></a>
-    </nav>
+  <!-- Ambient Interactive Background Mesh Canvas -->
+  <canvas id="ambientCanvas" class="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Custom Smooth Cursor (Pointer: fine) -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- ===== FLOATING GLASS NAVIGATION ===== -->
+  <nav class="glass" id="nav" aria-label="Main navigation">
+    <span class="nav-glint" aria-hidden="true"></span>
+    <a class="logo" href="#top" aria-label="Yashvir Paul Home">yashvir paul<sup>®</sup></a>
+    
+    <div class="nav-links" id="navLinks">
+      <span class="nav-pill" id="navPill" aria-hidden="true"></span>
+      <a href="#services">Services</a>
+      <a href="#simulator">Live Voice Demo</a>
+      <a href="#calculator">ROI Engine</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+    </div>
+
+    <div class="nav-actions">
+      <a class="btn primary nav-cta magnetic snd-click" href="#contact">Book a Call <span class="arr">→</span></a>
+      <button class="burger" id="burger" aria-label="Open mobile menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="m-menu" id="mmenu">
+    <a href="#services">Services</a>
+    <a href="#simulator">Live Voice Demo</a>
+    <a href="#calculator">ROI Engine</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#about">About</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="btn primary">Book a Free Call →</a>
+  </div>
+
+  <!-- ===== HERO SECTION ===== -->
+  <header class="hero" id="top">
+    <div class="hero-frost" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-badge-wrap rv">
+        <span class="hero-badge glass">
+          <span class="dot"></span> Yashvir Paul · AI Systems & Media Studio
+        </span>
+        <span class="hero-badge-status glass">
+          <span class="status-indicator"></span> 3 Client Spots Open
+        </span>
+      </div>
+
+      <h1 id="heroH1">
+        <span class="w"><span>Your</span></span>
+        <span class="w"><span>business,</span></span>
+        <span class="w"><span>scaling</span></span>
+        <span class="w"><span><em class="chrome">effortlessly</em></span></span>
+        <span class="w"><span>—</span></span>
+        <span class="w"><span>without</span></span>
+        <span class="w"><span>you</span></span>
+        <span class="w"><span>answering</span></span>
+        <span class="w"><span>every</span></span>
+        <span class="w"><span>call.</span></span>
+      </h1>
+
+      <p class="lead rv">
+        I build custom AI voice agents, run high-converting Meta & Google Ads, create viral short & long-form video content, and engineer automated systems that scale your revenue 24/7.
+      </p>
+
+      <div class="hero-ctas rv">
+        <a class="btn primary magnetic snd-hover" href="#contact">
+          <span>Book a Free Discovery Call</span>
+          <span class="arr">→</span>
+        </a>
+        <a class="btn lite magnetic snd-hover" href="#simulator">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <span>Test Live Voice Agent</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero Social Proof Live Stats -->
+    <div class="hero-meta wrap">
+      <div class="meta-card glass rv">
+        <b>24/7</b>
+        <span>Zero Missed Leads</span>
+      </div>
+      <div class="meta-card glass rv">
+        <b>&lt;450ms</b>
+        <span>Voice Latency Response</span>
+      </div>
+      <div class="meta-card glass rv">
+        <b>ROAS+</b>
+        <span>Meta & Google Ad Growth</span>
+      </div>
+      <div class="meta-card glass rv">
+        <b>100%</b>
+        <span>Engineered by Yashvir Paul</span>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-image" aria-hidden="true"></div><div class="hero-glow" aria-hidden="true"></div>
-      <div class="hero-content">
-        <p class="eyebrow"><i></i> AI Automation Studio</p>
-        <h1><span>Your business,</span><br><span>growing <em>faster</em> —</span><br><span>without you picking</span><br><span>up the phone.</span></h1>
-        <p class="hero-copy">I build AI voice agents, WhatsApp systems, and automation that answer, follow up, and book — so nothing falls through the cracks while you run the business.</p>
-        <div class="hero-actions"><a class="button dark" href="https://wa.me/919394389413" target="_blank" rel="noopener">Chat on WhatsApp <span>→</span></a><a class="text-link" href="#services">Explore Services <span>↓</span></a></div>
-        <div class="hero-stats"><div><b>24/7</b><span>AI agents on call</span></div><div><b>2</b><span>languages spoken</span></div><div><b>48h</b><span>reply guarantee</span></div><div><b>100%</b><span>custom-built</span></div></div>
+  <!-- ===== MARQUEE TOOLSTRIP ===== -->
+  <div class="marquee" aria-hidden="true">
+    <p class="marquee-title">Tools, Media & Infrastructure I Build With</p>
+    <div class="marquee-track">
+      <span>OpenAI GPT-4o <i>✦</i> Meta Ads Manager <i>✦</i> Google Ads <i>✦</i> ElevenLabs <i>✦</i> Premiere Pro & After Effects <i>✦</i> n8n Workflows <i>✦</i> Vapi Voice Engine <i>✦</i> Twilio Cloud <i>✦</i> DaVinci Resolve <i>✦</i> Claude 3.5 <i>✦</i> YouTube Studio <i>✦</i> Zapier <i>✦</i> Make <i>✦</i></span>
+      <span>OpenAI GPT-4o <i>✦</i> Meta Ads Manager <i>✦</i> Google Ads <i>✦</i> ElevenLabs <i>✦</i> Premiere Pro & After Effects <i>✦</i> n8n Workflows <i>✦</i> Vapi Voice Engine <i>✦</i> Twilio Cloud <i>✦</i> DaVinci Resolve <i>✦</i> Claude 3.5 <i>✦</i> YouTube Studio <i>✦</i> Zapier <i>✦</i> Make <i>✦</i></span>
+    </div>
+  </div>
+
+  <!-- ===== SERVICES SECTION ===== -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Services Overview</span>
+        <h2>THE SERVICE WE PROVIDE</h2>
+        <p class="lead">From autonomous voice telephony to high-ROI paid traffic and retention-driven video editing — every solution is customized for your specific growth goals.</p>
       </div>
-    </section>
 
-    <section class="ticker"><p>Tools I build with</p><div class="ticker-track"><span>OpenAI</span><b>✦</b><span>n8n</span><b>✦</b><span>ElevenLabs</span><b>✦</b><span>Twilio</span><b>✦</b><span>Make</span><b>✦</b><span>Zapier</span><b>✦</b><span>WhatsApp Business API</span><b>✦</b><span>OpenAI</span><b>✦</b><span>n8n</span><b>✦</b><span>ElevenLabs</span><b>✦</b><span>Twilio</span></div></section>
+      <div class="svc-grid">
+        <!-- Service 1: AI Voice Calling Agents -->
+        <article class="svc glass rv">
+          <span class="tag">Flagship</span>
+          <div class="ico" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c1 .3 2 .5 3 .7a2 2 0 0 1 1.6 2z"/>
+            </svg>
+          </div>
+          <h3>Autonomous Voice Calling Agents</h3>
+          <p>Never miss a high-ticket customer again. Your custom AI voice assistant answers inbound calls instantly, qualifies prospect intent, and books appointments directly to your calendar with natural human tone.</p>
+          
+          <div class="langs">
+            <span class="lang">English (US/UK/IN)</span>
+            <span class="lang">Hindi / Hinglish</span>
+            <span class="lang">+ Custom Dialects</span>
+          </div>
 
-    <section class="section services" id="services"><div class="section-intro"><p class="kicker">What I Build</p><h2>AI that answers, follows up, and sells — <em>without you managing it.</em></h2><p>Every system is built for your specific business. No templates, no off-the-shelf bots.</p></div>
-      <div class="service-grid">
-        <article class="service-card featured"><p class="card-top">Most requested <span>01</span></p><div class="service-icon">◔</div><h3>AI Voice Calling Agents</h3><p>Never miss a call again. Your AI receptionist answers every ring, understands what callers need, and books or qualifies them.</p><div class="tags"><span>English</span><span>Hindi</span><span>Inbound</span><span>Bookings</span></div></article>
-        <article class="service-card gold"><p class="card-top">Growing fast <span>02</span></p><div class="service-icon">✦</div><h3>Meta/Google Ads & Content</h3><p>Scroll-stopping Meta and Google ad creatives, AI avatars, and UGC-style videos built for your brand — plus campaigns to run them.</p><div class="tags"><span>Meta ads</span><span>Google ads</span><span>Reels</span></div></article>
-        <article class="service-card blue"><p class="card-top">End-to-end <span>03</span></p><div class="service-icon">⌘</div><h3>Complete Business Automation</h3><p>One connected system that captures every lead, tracks every follow-up, and reports back from a single dashboard.</p><div class="tags"><span>Lead tracking</span><span>CRM sync</span><span>Reports</span></div></article>
+          <div class="chips">
+            <span class="chip">24/7 Inbound Calling</span>
+            <span class="chip">Outbound Qualification</span>
+            <span class="chip">Google Calendar Sync</span>
+            <span class="chip">Live Call Transfers</span>
+          </div>
+        </article>
+
+        <!-- Service 2: Running Meta & Google Ads -->
+        <article class="svc glass rv">
+          <span class="tag">High ROI</span>
+          <div class="ico" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+            </svg>
+          </div>
+          <h3>Running Meta & Google Ads</h3>
+          <p>Full-funnel high-converting paid advertising across Facebook, Instagram, Google Search, and YouTube. Precise demographic targeting, dynamic creative split-testing, pixel setup, and aggressive ROAS scaling.</p>
+          <div class="chips">
+            <span class="chip">Meta Ad Campaigns</span>
+            <span class="chip">Google Search & Display</span>
+            <span class="chip">High-Intent Lead Funnels</span>
+            <span class="chip">ROAS Scaling</span>
+          </div>
+        </article>
+
+        <!-- Service 3: Long & Short Form Video Editing -->
+        <article class="svc glass rv">
+          <span class="tag">Viral Growth</span>
+          <div class="ico" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="m22 8-6 4 6 4V8Z" />
+              <rect x="2" y="6" width="14" height="12" rx="2" />
+            </svg>
+          </div>
+          <h3>Long & Short Form Video Editing</h3>
+          <p>Scroll-stopping short-form content (Reels, TikToks, Shorts) and high-retention long-form videos (YouTube, podcasts, masterclasses). Designed with viral hooks, motion graphics, sound design, and pacing that converts viewers into buyers.</p>
+          <div class="chips">
+            <span class="chip">Instagram Reels & Shorts</span>
+            <span class="chip">YouTube Long-Form</span>
+            <span class="chip">High-Retention Pacing</span>
+            <span class="chip">Motion Graphics & Sound FX</span>
+          </div>
+        </article>
       </div>
-      <div class="mini-services"><span>💬 WhatsApp Automation</span><span>✉️ Email Automation</span><span>🌐 Websites That Sell</span><span>🎬 Professional Long/Short-Form Edits</span></div>
-    </section>
 
-    <section class="section reason"><div class="reason-visual"><div class="orb orb-one"></div><div class="orb orb-two"></div><p>AI<br>compounds<br>daily.</p></div><div class="section-intro"><p class="kicker">Why businesses choose me</p><h2>Manual growth is slow growth. AI compounds <em>daily.</em></h2><p>Every missed call and unanswered message is a customer going to your competitor. I build systems that catch them — so growth doesn't depend on you being available 24/7.</p><div class="proof"><div><b>Direct</b><span>You work with the person building your system</span></div><div><b>Custom</b><span>Designed around how your business works</span></div><div><b>48h</b><span>Guaranteed reply on every enquiry</span></div></div></div></section>
-
-    <section class="section process"><div class="section-intro center"><p class="kicker">How it works</p><h2>From first call to <em>full autopilot.</em></h2></div><div class="steps"><article><b>01</b><h3>Discover</h3><p>A free call where I map out exactly what’s eating your team’s time and where leads are leaking.</p></article><article><b>02</b><h3>Design</h3><p>A clear blueprint of your system and a fixed quote. No surprises.</p></article><article><b>03</b><h3>Build</h3><p>Your system comes together in days, not months — and you see progress throughout.</p></article><article><b>04</b><h3>Launch & Support</h3><p>We go live together and I stay hands-on until it runs itself.</p></article></div></section>
-
-    <section class="section demos" id="work"><div class="section-intro"><p class="kicker">Hear it. See it.</p><h2>Don’t take my word for it — <em>watch the AI work.</em></h2><p>Concept demos from my build lab, labeled honestly as demos — not dressed up as client calls.</p></div><div class="demo-grid"><article class="demo voice"><span>Demo · Voice Agent</span><div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><h3>AI agent takes a live booking call</h3><p>Hindi + English demo · 90 seconds</p><button class="play" data-demo="Voice agent demo playing">Play voice agent demo <b>▶</b></button></article><article class="demo chat"><span>Demo · WhatsApp Automation</span><div class="messages"><p>Hi! Do you deliver to Andheri?</p><p>Yes! 🚀 Delivery in 30 min. Want to see the menu?</p><p>Yes please</p><p>Here you go — today’s offer: 20% off ✨</p></div><h3>WhatsApp replies itself — and sells</h3><p>Live automation flow · 60 seconds</p><button class="play" data-demo="WhatsApp demo playing">Play WhatsApp automation demo <b>▶</b></button></article></div></section>
-
-    <section class="section industries"><div class="section-intro center"><p class="kicker">Who I help</p><h2>Great locally. <em>Now unbeatable online.</em></h2><p>Built for businesses that already win offline — and are ready to win online too.</p></div><div class="industry-grid"><div>🏥<b>Clinics & Hospitals</b><span>AI answers appointment calls and fills empty slots.</span></div><div>🏠<b>Real Estate</b><span>Voice agents qualify buyers 24/7.</span></div><div>🍽️<b>Restaurants</b><span>Bookings, orders and offers automated.</span></div><div>🛒<b>E-commerce & D2C</b><span>Meta/Google ads, recovery and order updates.</span></div><div>💼<b>Agencies & Services</b><span>Follow-ups and back office on autopilot.</span></div><div>🏭<b>Local Businesses</b><span>Make your business unmissable online.</span></div></div></section>
-
-    <section class="founding"><div><p class="kicker">Founding client offer</p><h2>Be one of my <em>first five</em> clients.</h2></div><div><p>I’m building this studio one relationship at a time. Get direct attention, priority scheduling, and founder-cohort pricing while spots last.</p><a class="button light" href="#contact">Claim a Founding Spot <span>→</span></a></div></section>
-
-    <section class="section faq" id="faq"><div class="section-intro center"><p class="kicker">Common questions</p><h2>Asked <em>often.</em> Answered honestly.</h2></div><div class="faq-list"><details open><summary>Will the AI voice agent sound robotic to my customers?<b>+</b></summary><p>I use natural-sounding, latest-generation voice models with real pauses and accents matched to your customers. You’ll hear a real demo before you commit.</p></details><details><summary>How long does it take to build my automation?<b>+</b></summary><p>Simple WhatsApp and email flows go live in 3–7 days. Voice agents typically take 1–2 weeks including testing.</p></details><details><summary>Do I need technical knowledge to use what you build?<b>+</b></summary><p>Zero. You get a simple dashboard and walkthrough. If you can use WhatsApp, you can run your AI system.</p></details><details><summary>What does it cost?<b>+</b></summary><p>Every business is different, so I quote after a free discovery call. You’ll get a fixed price before work starts.</p></details></div></section>
-
-    <section class="section about" id="about"><div class="portrait"><div class="portrait-image" aria-label="Yashvir Paul initials">YP</div><div class="portrait-note"><b>Yashvir Paul</b><span>Founder & Owner</span></div></div><div class="section-intro"><p class="kicker">About Yashvir Paul</p><h2>Systems that create <em>connection, flow, and growth.</em></h2><p>That’s exactly what I build: every tool your business touches — calls, WhatsApp, email, ads and spreadsheets — connected into one system that runs on its own.</p><p>I’m Yashvir Paul, founder and owner of this AI automation studio. I help businesses stop losing calls, leads and revenue to something as fixable as a missed ring.</p><blockquote>“An agent that sounds good in a demo and one that holds up on a real phone call are two very different things.”</blockquote></div></section>
-
-    <section class="contact" id="contact"><div class="contact-copy"><p class="kicker">Let’s talk</p><h2>Let’s put your business on <em>autopilot.</em></h2><p>Tell me what’s eating your time. I’ll reply within 48 hours with honest advice — even if the honest answer is “you don’t need AI for that yet.”</p><a href="mailto:yveer8609@gmail.com">Email <span>yveer8609@gmail.com</span></a><a href="tel:+919394389413">Call <span>+91 93943 89413</span></a><a href="https://wa.me/919394389413" target="_blank" rel="noopener">WhatsApp <span>+91 93943 89413</span></a></div><form id="contact-form"><label>Your name<input required name="name"></label><label>Business name<input required name="business"></label><label>Business category<select name="industry"><option>Select your industry</option><option>Real Estate</option><option>Clinic / Healthcare</option><option>Restaurant / Food & Beverage</option><option>E-commerce / Retail</option><option>Other</option></select></label><label>What do you need?<select name="service"><option>Select a service</option><option>AI Voice Calling Agent</option><option>WhatsApp / Email Automation</option><option>Meta/Google Ads & Content</option><option>Professional Long/Short-Form Edits</option><option>Complete Business Automation</option><option>Website / Landing Page</option></select></label><label>Tell me a little more<textarea name="message"></textarea></label><button class="button dark" type="submit">Send on WhatsApp <span>→</span></button><p class="form-status" aria-live="polite"></p></form></section>
-    <section class="closing-founder" aria-label="About Yashvir Paul">
-      <div class="closing-photo"><img src="yashvir-paul.jpg" alt="Yashvir Paul" /></div>
-      <div class="closing-copy">
-        <p class="kicker">Built personally</p>
-        <h2>Meet the person behind <em>your next system.</em></h2>
-        <p>I’m Yashvir Paul — founder and owner. I build every automation, campaign, and edit with your real business goals in mind.</p>
-        <p class="closing-signature">Yashvir Paul <span>Founder & Owner</span></p>
+      <!-- Secondary Services Row -->
+      <div class="svc-row">
+        <article class="svc mini glass rv">
+          <div class="mini-icon">🌐</div>
+          <h3>WE MAKE WEBSITES THAT BRINGS YOU CLIENTS</h3>
+          <p>Lighting-fast, ultra-clean websites and landing pages engineered to convert cold visitors into high-paying booked clients.</p>
+        </article>
+        <article class="svc mini glass rv">
+          <div class="mini-icon">📱</div>
+          <h3>SOCIAL MEDIA MANAGEMENT</h3>
+          <p>Full-service social growth, daily content scheduling, viral hooks, community engagement, and brand positioning across Instagram, YouTube & LinkedIn.</p>
+        </article>
+        <article class="svc mini glass rv">
+          <div class="mini-icon">⚙️</div>
+          <h3>Complete Business Automation</h3>
+          <p>Connect your ads, phone calls, CRM (HubSpot/Sheets), invoicing, and team notifications into one seamless autopilot system.</p>
+        </article>
       </div>
-    </section>
-  </main>
-  <footer><div class="footer-top"><div><a class="brand" href="#top">Yashvir Paul</a><p>AI voice agents, automation systems & Meta/Google ads — built by hand for businesses ready to grow.</p></div><h3>Let’s build the system that <em>grows while you sleep.</em></h3><a class="button light" href="https://wa.me/919394389413" target="_blank" rel="noopener">Start a project <span>→</span></a></div><div class="footer-bottom"><span>THE WEBSITE AND EVERYTHING IS BUILT BY YASHVIR PAUL</span><a href="https://wa.me/919394389413" target="_blank" rel="noopener">WhatsApp: +91 93943 89413</a></div></footer>
-  <div class="toast" role="status"></div><script src="script.js"></script>
+    </div>
+  </section>
+
+  <!-- ===== LIVE INTERACTIVE VOICE CALL SIMULATOR ===== -->
+  <section id="simulator" class="section-alt">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Interactive Build Lab</span>
+        <h2>Experience the AI Voice in action — <em>Test drive live right here.</em></h2>
+        <p class="lead">Try our live browser voice simulator. Hear how naturally the AI agent speaks, handles interruptions, and extracts critical details in real time.</p>
+      </div>
+
+      <!-- Voice Simulator Interface -->
+      <div class="sim-container glass rv" id="voiceSimWrap">
+        <div class="sim-grid">
+          <!-- Left: Phone Simulator UI -->
+          <div class="phone-frame glass">
+            <div class="phone-speaker"></div>
+            <div class="phone-screen">
+              <div class="call-header">
+                <span class="call-status" id="callStatusText">Ready to Call</span>
+                <h4 id="agentNameDisplay">Aria — Clinic Receptionist</h4>
+                <p id="callTimer">00:00</p>
+              </div>
+
+              <!-- Animated Frequency Waveform -->
+              <div class="audio-visualizer-box">
+                <canvas id="voiceCanvas" width="280" height="70"></canvas>
+                <div class="pulse-ring" id="pulseRing"></div>
+              </div>
+
+              <!-- Call Action Controls -->
+              <div class="call-controls">
+                <button class="call-btn start snd-click" id="startCallBtn" title="Start Live Call Simulation">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff">
+                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.057 15.057 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 3.99c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.61c0-.55-.45-1-.99-1z"/>
+                  </svg>
+                  <span>Start Live Call</span>
+                </button>
+                <button class="call-btn end snd-click" id="endCallBtn" style="display:none;" title="End Call">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff">
+                    <path d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.7.28-.28 0-.53-.11-.71-.29L.29 13.08a.996.996 0 0 1 0-1.41C3.42 8.47 7.46 6.5 12 6.5s8.58 1.97 11.71 5.17c.39.39.39 1.02 0 1.41l-2.48 2.48c-.18.18-.43.29-.71.29-.27 0-.52-.11-.7-.28-.79-.74-1.69-1.36-2.67-1.85-.33-.16-.56-.5-.56-.9v-3.1C15.15 9.25 13.6 9 12 9z"/>
+                  </svg>
+                  <span>Hang Up</span>
+                </button>
+              </div>
+
+              <!-- Quick Prompt Buttons for the User -->
+              <div class="user-prompt-chips" id="promptChips">
+                <p class="chip-caption">Click to ask the AI agent:</p>
+                <div class="chips-list" id="chipsList">
+                  <!-- Dynamically populated per scenario -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Scenario Configuration & Live Transcript -->
+          <div class="sim-sidebar">
+            <div class="scenario-selector">
+              <label class="scenario-label">Choose Business Scenario:</label>
+              <div class="scenario-buttons">
+                <button class="scenario-btn active snd-click" data-scenario="clinic">
+                  <b>🏥 Dental Clinic</b>
+                  <span>Appointment scheduling & pricing</span>
+                </button>
+                <button class="scenario-btn snd-click" data-scenario="realestate">
+                  <b>🏠 Luxury Real Estate</b>
+                  <span>Buyer qualification & site visit</span>
+                </button>
+                <button class="scenario-btn snd-click" data-scenario="restaurant">
+                  <b>🍽️ Gourmet Bistro</b>
+                  <span>Table reservation & special menu</span>
+                </button>
+                <button class="scenario-btn snd-click" data-scenario="b2b">
+                  <b>💼 B2B & E-Commerce</b>
+                  <span>Lead discovery & ad integration</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Live Speech & Event Stream -->
+            <div class="transcript-card glass">
+              <div class="transcript-header">
+                <span>Live Real-Time Transcript</span>
+                <span class="live-dot" id="liveDot">IDLE</span>
+              </div>
+              <div class="transcript-body" id="transcriptBody">
+                <div class="transcript-msg system">
+                  <i>✦ Click "Start Live Call" above to test the agent with real audio & speech recognition.</i>
+                </div>
+              </div>
+              <div class="transcript-footer">
+                <span id="extractedDataBadge">Extracted Data: None yet</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ROI & COST SAVINGS CALCULATOR ===== -->
+  <section id="calculator">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Measurable Impact</span>
+        <h2>How much revenue is slipping through your cracks? <em>Calculate it.</em></h2>
+        <p class="lead">Adjust the sliders to reflect your monthly volume. See the direct revenue you can recover with zero additional payroll.</p>
+      </div>
+
+      <div class="calc-grid glass rv">
+        <!-- Sliders Form -->
+        <div class="calc-controls">
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="missedCallsInput">Missed Calls & Unanswered Enquiries / month</label>
+              <span class="slider-val" id="missedCallsVal">120 calls</span>
+            </div>
+            <input type="range" id="missedCallsInput" min="20" max="1000" step="10" value="120" class="custom-range" />
+            <span class="slider-hint">Industry average: 22% of inbound business calls go to voicemail.</span>
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="dealValueInput">Average Customer Value (LTV / Deal Size)</label>
+              <span class="slider-val" id="dealValueVal">$850</span>
+            </div>
+            <input type="range" id="dealValueInput" min="50" max="10000" step="50" value="850" class="custom-range" />
+            <span class="slider-hint">What an average closed patient, client, or deal is worth to you.</span>
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="hoursSpentInput">Staff Hours on Repetitive Calls / week</label>
+              <span class="slider-val" id="hoursSpentVal">25 hrs</span>
+            </div>
+            <input type="range" id="hoursSpentInput" min="5" max="120" step="5" value="25" class="custom-range" />
+            <span class="slider-hint">Time spent repeating pricing, rescheduling, and answering basic FAQs.</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Output Dashboard -->
+        <div class="calc-results glass-dark">
+          <span class="calc-badge">Estimated Annual Growth</span>
+          <div class="metric-main">
+            <span class="metric-currency">$</span>
+            <b id="recoveredRevDisplay">35,700</b>
+            <span class="metric-period">/ year</span>
+          </div>
+          <p class="calc-subtext">Estimated new revenue recovered from previously lost leads.</p>
+
+          <div class="calc-submetrics">
+            <div class="submetric-box">
+              <b id="hoursSavedDisplay">1,300 hrs</b>
+              <span>Team Hours Saved / Year</span>
+            </div>
+            <div class="submetric-box">
+              <b id="roiMultiplierDisplay">14.2x</b>
+              <span>Estimated ROI Multiplier</span>
+            </div>
+          </div>
+
+          <button class="btn lime magnetic snd-click" id="calcApplyBtn">
+            <span>Claim This Revenue → Book with Yashvir</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SYSTEM ARCHITECTURE & WORKFLOW EXPLORER ===== -->
+  <section id="architecture" class="section-alt">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Technical Blueprints</span>
+        <h2>How the engine works under the hood. <em>Click to inspect nodes.</em></h2>
+        <p class="lead">Enterprise reliability with modern sub-second AI pipelines. Every component is isolated, logged, and failure-proofed.</p>
+      </div>
+
+      <!-- Architecture Interactive Flowchart -->
+      <div class="arch-container glass rv">
+        <div class="arch-pipeline">
+          <!-- Step 1 -->
+          <div class="arch-node glass active snd-click" data-step="1">
+            <span class="node-num">01</span>
+            <div class="node-icon">📞</div>
+            <h4>Omnichannel Trigger</h4>
+            <p>Inbound Phone, Meta Ads, Webhooks</p>
+          </div>
+
+          <div class="arch-arrow">→</div>
+
+          <!-- Step 2 -->
+          <div class="arch-node glass snd-click" data-step="2">
+            <span class="node-num">02</span>
+            <div class="node-icon">🧠</div>
+            <h4>AI Intelligence Layer</h4>
+            <p>LLM reasoning, sentiment & extraction</p>
+          </div>
+
+          <div class="arch-arrow">→</div>
+
+          <!-- Step 3 -->
+          <div class="arch-node glass snd-click" data-step="3">
+            <span class="node-num">03</span>
+            <div class="node-icon">⚡</div>
+            <h4>Autonomous Engine</h4>
+            <p>n8n logic, Twilio telephony, APIs</p>
+          </div>
+
+          <div class="arch-arrow">→</div>
+
+          <!-- Step 4 -->
+          <div class="arch-node glass snd-click" data-step="4">
+            <span class="node-num">04</span>
+            <div class="node-icon">🎯</div>
+            <h4>Instant Closed Outcome</h4>
+            <p>Calendar booked, CRM synced, alerts</p>
+          </div>
+        </div>
+
+        <!-- Node Inspector Details Box -->
+        <div class="arch-inspector glass-dark" id="archInspector">
+          <div class="inspector-header">
+            <h4 id="inspectorTitle">Step 01: Omnichannel Ingestion Trigger</h4>
+            <span class="badge glass" id="inspectorTag">Latency: &lt;50ms</span>
+          </div>
+          <p id="inspectorDesc">A phone call arrives via Twilio SIP trunking or a Meta Ad lead form hits the webhook. The event payload is instantly decrypted and piped to our streaming buffer.</p>
+          <div class="inspector-code">
+            <pre><code id="inspectorCode">{
+  "event": "inbound_call",
+  "caller": "+91 9394389413",
+  "channel": "telephony_vapi_sip",
+  "status": "connected",
+  "audio_sample_rate": "16000Hz"
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MULTI-ACCENT & VOICE PERSONA SOUNDBOARD ===== -->
+  <section id="voices">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Vocal Fidelity</span>
+        <h2>Voices that sound like <em>trusted colleagues</em> — never clunky robots.</h2>
+        <p class="lead">Listen to our curated neural voice models with real pauses, natural intonation, and tailored industry accents.</p>
+      </div>
+
+      <div class="voice-board rv">
+        <!-- Voice Card 1 -->
+        <div class="voice-card glass">
+          <div class="vc-top">
+            <div class="vc-avatar">👩‍⚕️</div>
+            <div>
+              <h4>Dr. Emily Vance</h4>
+              <p>Healthcare & Clinical Receptionist (US Warm)</p>
+            </div>
+          </div>
+          <div class="vc-body">
+            <p class="vc-sample-text">"Hello! Thank you for calling Beverly Hills Dental. I'd be glad to help you schedule Dr. Miller's next consultation. What day suits you best?"</p>
+            <button class="voice-play-btn snd-click" data-voice="emily" data-text="Hello! Thank you for calling Beverly Hills Dental. I would be glad to help you schedule Dr. Miller's next consultation. What day suits you best?">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Play Voice Sample</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Voice Card 2 -->
+        <div class="voice-card glass">
+          <div class="vc-top">
+            <div class="vc-avatar">🤵‍♂️</div>
+            <div>
+              <h4>Julian Thorne</h4>
+              <p>Luxury Real Estate Concierge (UK Polished)</p>
+            </div>
+          </div>
+          <div class="vc-body">
+            <p class="vc-sample-text">"Good afternoon. Welcome to Kensington Estates. Are you inquiring regarding the private penthouse preview or our seaside villas?"</p>
+            <button class="voice-play-btn snd-click" data-voice="julian" data-text="Good afternoon. Welcome to Kensington Estates. Are you inquiring regarding the private penthouse preview or our seaside villas?">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Play Voice Sample</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Voice Card 3 -->
+        <div class="voice-card glass">
+          <div class="vc-top">
+            <div class="vc-avatar">👩‍💼</div>
+            <div>
+              <h4>Priya Sharma</h4>
+              <p>High-Growth E-Commerce & D2C Support (Hinglish)</p>
+            </div>
+          </div>
+          <div class="vc-body">
+            <p class="vc-sample-text">"Namaste! Yashvir Paul Studio mein aapka swagat hai. Aapke business ke growth aur ads scale karne ke liye main aapki poori madad karungi."</p>
+            <button class="voice-play-btn snd-click" data-voice="priya" data-text="Namaste! Yashvir Paul Studio mein aapka swagat hai. Aapke business ke growth aur ads scale karne ke liye main aapki poori madad karungi.">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>Play Voice Sample</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE YASHVIR PAUL / COMPARISON ===== -->
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="why-split">
+        <div class="rv">
+          <span class="eyebrow">Why Clients Choose Yashvir Paul</span>
+          <h2>Manual follow-ups are <span class="dim">slow.</span> Autonomous AI & Paid Media scale <em>infinitely.</em></h2>
+          <p class="lead" style="margin-top:1rem">
+            Every missed ring and unoptimized ad dollar is money handed directly to your nearest competitor. We build the digital growth engine that captures, converts, and scales your brand.
+          </p>
+
+          <div class="why-stats" style="margin-top:2.5rem;">
+            <div class="stat glass rv">
+              <b>Direct</b>
+              <span>You work 1-on-1 with Yashvir Paul who personally engineers your builds and media campaigns</span>
+            </div>
+            <div class="stat glass rv">
+              <b>Turnkey</b>
+              <span>Ready in days, not months. Telephony, Meta Ads, Video Editing & CRM included</span>
+            </div>
+            <div class="stat glass rv">
+              <b>48h</b>
+              <span>Guaranteed response SLA on all system maintenance, ad tuning and video deliveries</span>
+            </div>
+            <div class="stat glass rv">
+              <b>Zero Risk</b>
+              <span>Comprehensive sandbox testing and transparent creative milestones before launch</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="cmp glass rv">
+          <table>
+            <thead>
+              <tr>
+                <th>Criteria</th>
+                <th>Generic Agencies</th>
+                <th>Yashvir Paul Studio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Engineering</td>
+                <td class="no">Brittle Zapier templates</td>
+                <td class="yes">Custom n8n & Vapi architecture</td>
+              </tr>
+              <tr>
+                <td>Paid Ads</td>
+                <td class="no">Basic boost posts</td>
+                <td class="yes">Full-funnel Meta & Google scaling</td>
+              </tr>
+              <tr>
+                <td>Video Content</td>
+                <td class="no">Generic stock templates</td>
+                <td class="yes">Viral short/long-form retention editing</td>
+              </tr>
+              <tr>
+                <td>Support</td>
+                <td class="no">Account manager ticket queue</td>
+                <td class="yes">Direct founder WhatsApp access</td>
+              </tr>
+              <tr>
+                <td>Pricing</td>
+                <td class="no">Opaque monthly retainers</td>
+                <td class="yes">Fixed upfront quote + zero lock-in</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS: 4 STEPS TO AUTOPILOT ===== -->
+  <section id="process">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Execution Blueprint</span>
+        <h2>From first discovery to <em>full operational autopilot.</em></h2>
+      </div>
+
+      <div class="steps">
+        <div class="step glass rv">
+          <h3>01. Discovery & Audit</h3>
+          <p>We audit your customer acquisition channels, lead leakage points, and content bottlenecks.</p>
+        </div>
+        <div class="step glass rv">
+          <h3>02. Strategy & Blueprint</h3>
+          <p>You receive an architectural diagram, ad campaign structure, video formats, and fixed quote.</p>
+        </div>
+        <div class="step glass rv">
+          <h3>03. Build & Edit</h3>
+          <p>We build voice AI pipelines, edit high-retention video assets, and launch optimized ad campaigns.</p>
+        </div>
+        <div class="step glass rv">
+          <h3>04. Live Deployment & Scaling</h3>
+          <p>We go live, track real-time analytics, and optimize weekly for maximum ROAS and appointment volume.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOUNDING CLIENT OFFER ===== -->
+  <section class="offer">
+    <div class="wrap rv">
+      <span class="eyebrow" style="color:rgba(255,255,255,.6)">Client Cohort 2026</span>
+      <h2>Partner directly with <em>Yashvir Paul.</em></h2>
+      <p>
+        To ensure obsessive attention to detail and outsized results, I only onboard a select cohort of clients each month. You receive direct 1-on-1 development, priority turnaround, and friendly founding rates.
+      </p>
+      <a class="btn lime magnetic snd-hover" href="#contact">
+        <span>Claim Your Spot</span>
+        <span class="arr">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FAQ SECTION ===== -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head rv" style="text-align:center;margin-inline:auto">
+        <span class="eyebrow" style="justify-content:center">Clear Answers</span>
+        <h2>Frequently Asked Questions. <em>Answered honestly.</em></h2>
+      </div>
+
+      <div class="faq">
+        <div class="faq-item glass rv">
+          <button class="faq-q snd-click">
+            <span>Will the AI voice agent sound robotic to my callers?</span>
+            <span class="pm">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Not at all. We utilize cutting-edge streaming voice synthesis models with natural breathing rhythms, hesitation fillers, and custom dialect inflections. In blind testing, over 91% of callers engage naturally as if speaking to a human receptionist.</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass rv">
+          <button class="faq-q snd-click">
+            <span>How do you handle Meta & Google Ads campaigns?</span>
+            <span class="pm">+</span>
+          </button>
+          <div class="faq-a">
+            <p>We handle end-to-end campaign architecture: high-converting ad copy, viral video creatives, precise audience targeting, conversion pixel integration, and daily A/B testing to ensure maximum ROAS.</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass rv">
+          <button class="faq-q snd-click">
+            <span>What type of video editing do you provide?</span>
+            <span class="pm">+</span>
+          </button>
+          <div class="faq-a">
+            <p>We edit both short-form (Reels, TikToks, Shorts with animated captions, B-roll, and retention hooks) and long-form (YouTube documentaries, podcasts, tutorials with sound design and motion graphics).</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass rv">
+          <button class="faq-q snd-click">
+            <span>How fast can our system or campaign go live?</span>
+            <span class="pm">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Video edits and ad setups typically go live within 3–5 business days. Full AI voice telephony and CRM automation pipelines launch in 7–12 days including rigorous sandbox testing.</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass rv">
+          <button class="faq-q snd-click">
+            <span>Do I need technical skills to manage this?</span>
+            <span class="pm">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Zero technical skills needed. You get a clean visual dashboard and direct ongoing support from Yashvir Paul.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT / FOUNDER SECTION ===== -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="founder-card glass rv">
+        <div class="avatar">
+          <img src="./yashvir.jpg" alt="Yashvir Paul, Founder" class="founder-photo" loading="lazy">
+        </div>
+        <h3>YASHVIR PAUL</h3>
+        <p class="role">Founder & Automation / Media Architect</p>
+        <blockquote>
+          "Whether it's building an autonomous AI voice receptionist or scaling viral video ad campaigns, my mission is simple: engineering systems that capture attention and convert it into reliable revenue."
+        </blockquote>
+        <div class="chips" style="justify-content:center;margin-top:1.4rem">
+          <span class="chip">Voice AI</span>
+          <span class="chip">Meta & Google Ads</span>
+          <span class="chip">Video Editing</span>
+        </div>
+        <a class="li-btn snd-hover" href="http://www.linkedin.com/in/yashvir-paul-a6bb65309" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="#fff">
+            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z" />
+          </svg>
+          Connect on LinkedIn
+        </a>
+      </div>
+
+      <div class="rv">
+        <span class="eyebrow">The Person Behind The Studio</span>
+        <h2><em>YASHVIR PAUL</em> — Systems that scale, media that converts.</h2>
+        <p class="lead" style="margin-top:1rem">
+          I'm Yashvir Paul, and I partner with ambitious businesses and creators to solve two major growth challenges: attracting qualified traffic through viral content & high-ROI ads, and converting every single inbound inquiry 24/7 using autonomous AI systems.
+        </p>
+        <p class="lead" style="margin-top:1rem">
+          When you partner with me, you work directly with the person architecting your code, editing your videos, and optimizing your ad spend — zero outsourced middle-managers.
+        </p>
+
+        <div class="about-points">
+          <div class="a-point glass">
+            <i>✦</i>
+            <div>
+              <b>Direct Collaboration with Yashvir</b>
+              <span>Personalized strategic attention on every campaign, workflow build, and creative iteration.</span>
+            </div>
+          </div>
+          <div class="a-point glass">
+            <i>✦</i>
+            <div>
+              <b>Data-Driven & ROI-Focused</b>
+              <span>Every ad dollar and video cut is measured by customer acquisition cost and conversion performance.</span>
+            </div>
+          </div>
+          <div class="a-point glass">
+            <i>✦</i>
+            <div>
+              <b>End-to-End Execution</b>
+              <span>From recording scripts to paid ad scaling and telephony integration — all under one unified roof.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT & INSTANT PROPOSAL GENERATOR ===== -->
+  <section class="contact section-alt" id="contact">
+    <div class="wrap">
+      <div class="rv">
+        <span class="eyebrow">Let's Build</span>
+        <h2>Put your growth on <em>high-converting autopilot.</em></h2>
+        <p class="lead">
+          Share what is slowing down your team or where you want to scale. I will reply within 24 hours with an actionable blueprint.
+        </p>
+
+        <div class="quick">
+          <a class="glass snd-hover" href="mailto:yashvirpaulyt@gmail.com">
+            <span class="qi">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="4" width="20" height="16" rx="3" />
+                <path d="m2 7 10 6L22 7" />
+              </svg>
+            </span>
+            <span>Email Direct<small>yashvirpaulyt@gmail.com</small></span>
+          </a>
+
+          <a class="glass snd-hover" href="tel:+919394389413">
+            <span class="qi">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c1 .3 2 .5 3 .7a2 2 0 0 1 1.6 2z" />
+              </svg>
+            </span>
+            <span>Direct Call<small>9394389413</small></span>
+          </a>
+
+          <a class="glass snd-hover" href="https://wa.me/919394389413?text=Hi%20Yashvir,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">
+            <span class="qi">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M21 11.5a8.4 8.4 0 0 1-9.2 8.4 8.6 8.6 0 0 1-3.6-.9L3 20l1-5a8.4 8.4 0 1 1 17-3.5z" />
+              </svg>
+            </span>
+            <span>WhatsApp Quick Chat<small>9394389413 · Instant response</small></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Smart Form Card -->
+      <form class="form-card glass rv" id="leadForm">
+        <div class="f-grid">
+          <div class="f-row">
+            <label for="fn">Your Name</label>
+            <input id="fn" name="name" required placeholder="e.g. Rahul Sharma" />
+          </div>
+          <div class="f-row">
+            <label for="fb">Company / Channel Name</label>
+            <input id="fb" name="business" placeholder="e.g. Apex Realty / YouTube Brand" />
+          </div>
+        </div>
+
+        <div class="f-grid">
+          <div class="f-row">
+            <label>Industry / Niche</label>
+            <div class="cselect" data-name="category">
+              <select id="fcat" name="category">
+                <option value="" disabled selected>Select industry</option>
+                <option>Content Creator / Media Brand</option>
+                <option>E-commerce & D2C Brands</option>
+                <option>Real Estate & Development</option>
+                <option>Healthcare & Clinics</option>
+                <option>B2B Agency & Consulting</option>
+                <option>Restaurant & Hospitality</option>
+                <option>Other Business</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="f-row">
+            <label>Primary Service Needed</label>
+            <div class="cselect" data-name="service">
+              <select id="fs" name="service">
+                <option value="" disabled selected>Select service</option>
+                <option data-sub="24/7 inbound reception, qualification & calendar sync">AI Voice Calling Agent</option>
+                <option data-sub="Full-funnel paid traffic on Facebook, Instagram, Google">Running Meta & Google Ads</option>
+                <option data-sub="Viral short-form Reels & high-retention YouTube edits">Long & Short Form Video Editing</option>
+                <option data-sub="End-to-end automation connecting ads, CRM & telephony">Complete Business Automation</option>
+                <option data-sub="Modern conversion-first landing page">High-Converting Landing Page</option>
+                <option data-sub="Custom combination of media & AI systems">Full Growth Suite (All Services)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="f-row">
+          <label>Estimated Monthly Volume / Budget</label>
+          <input id="fvol" name="volume" placeholder="e.g. ~100 calls/mo, $2,000 ad budget, 15 videos/mo" />
+        </div>
+
+        <div class="f-row">
+          <label>Preferred Contact Channel</label>
+          <div class="chip-radio">
+            <input type="radio" id="cWA" name="contact_pref" value="WhatsApp" checked />
+            <label for="cWA">WhatsApp</label>
+
+            <input type="radio" id="cCall" name="contact_pref" value="Phone Call" />
+            <label for="cCall">Phone Call</label>
+
+            <input type="radio" id="cEmail" name="contact_pref" value="Email" />
+            <label for="cEmail">Email</label>
+          </div>
+        </div>
+
+        <div class="f-row">
+          <label for="fm">Tell me about your project goals <span class="opt">(Optional)</span></label>
+          <textarea id="fm" name="msg" placeholder="e.g. We want to scale our Meta ads, edit 20 shorts a month, and set up an AI agent for missed calls..."></textarea>
+        </div>
+
+        <div class="form-btn-group">
+          <button class="btn primary magnetic snd-click" type="submit" id="submitFormBtn">
+            <span>Send Project Inquiry</span>
+            <span class="arr">→</span>
+          </button>
+          <button class="btn lime magnetic snd-click" type="button" id="whatsappDirectBtn">
+            <span>Chat on WhatsApp Instant</span>
+            <span class="arr">💬</span>
+          </button>
+        </div>
+        
+        <p class="form-guarantee">
+          🔒 Zero spam. Direct review by Yashvir Paul. Replies within 24 hours.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== CHROME LIQUID OUTRO ===== -->
+  <div class="outro" aria-hidden="true">
+    <span class="word chrome rv">YASHVIR PAUL</span>
+  </div>
+
+  <!-- ===== SPLIT-PANEL FOOTER ===== -->
+  <footer>
+    <div class="foot-card glass rv">
+      <!-- Left Visual Panel -->
+      <div class="foot-visual">
+        <div class="fv-glow"></div>
+        <div class="fv-in">
+          <span class="fv-tag">Yashvir Paul · AI Systems & Media Studio</span>
+          <h3>Let's build the autonomous system that <em>scales while you sleep.</em></h3>
+        </div>
+      </div>
+
+      <!-- Right Content Panel -->
+      <div class="foot-body">
+        <div class="foot-top">
+          <div class="foot-brand">
+            <a class="logo" href="#top">yashvir paul<sup>®</sup></a>
+            <p>High-performance AI voice agents, Meta & Google Ads, viral video editing, and autonomous business workflows built by Yashvir Paul.</p>
+          </div>
+          <a class="btn primary magnetic snd-hover foot-cta" href="#contact">
+            <span>Book Free Call</span>
+            <span class="arr">→</span>
+          </a>
+        </div>
+
+        <div class="foot-links">
+          <div class="foot-col">
+            <h4>Services</h4>
+            <a href="#services">Voice Agents</a>
+            <a href="#services">Meta & Google Ads</a>
+            <a href="#services">Video Editing</a>
+            <a href="#simulator">Live Voice Demo</a>
+            <a href="#calculator">ROI Engine</a>
+          </div>
+          <div class="foot-col">
+            <h4>Connect</h4>
+            <a href="#about">About Yashvir</a>
+            <a href="mailto:yashvirpaulyt@gmail.com">Email Direct</a>
+            <a href="tel:+919394389413">Call 9394389413</a>
+            <a href="https://wa.me/919394389413" target="_blank" rel="noopener">WhatsApp Direct</a>
+            <a href="http://www.youtube.com/@YashvirPaul" target="_blank" rel="noopener">YouTube Channel</a>
+          </div>
+        </div>
+
+        <div class="foot-bottom">
+          <!-- Signature Built By Yashvir Paul Badge -->
+          <div class="built-by-section">
+            <p class="built-by-title">THE WEBSITE IS BUILT BY YASHVIR PAUL</p>
+            <a href="https://wa.me/919394389413" target="_blank" rel="noopener" class="built-by-phone" title="Click to chat with Yashvir Paul on WhatsApp">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.4 8.4 0 0 1-9.2 8.4 8.6 8.6 0 0 1-3.6-.9L3 20l1-5a8.4 8.4 0 1 1 17-3.5z" />
+              </svg>
+              <span>9394389413</span>
+            </a>
+          </div>
+
+          <div class="socials">
+            <!-- LinkedIn -->
+            <a class="glass snd-hover" href="http://www.linkedin.com/in/yashvir-paul-a6bb65309" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M7 10v7M7 7v.1M12 17v-4a2.5 2.5 0 0 1 5 0v4" />
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a class="glass snd-hover" href="http://www.youtube.com/@YashvirPaul" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
+              </svg>
+            </a>
+            <!-- X Twitter -->
+            <a class="glass snd-hover" href="https://x.com/yashvirpaul?s=11" target="_blank" rel="noopener" aria-label="X Twitter">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.9 2H22l-6.6 7.6L23.3 22h-6.1l-4.8-6.3L6.9 22H3.7l7.1-8.1L1 2h6.3l4.3 5.7L18.9 2Zm-1.1 18h1.7L7.1 3.9H5.3L17.8 20Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sound Toggle Floating Pill -->
+  <button class="snd glass" id="sndBtn" aria-label="Toggle WebAudio sound effects" title="Toggle audio feedback">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M11 5 6 9H2v6h4l5 4V5z" />
+      <path class="on-wave" d="M15.5 8.5a5 5 0 0 1 0 7M18.4 5.6a9 9 0 0 1 0 12.8" />
+      <line class="off-line" x1="22" y1="2" x2="2" y2="22" stroke="#e74c3c" />
+    </svg>
+  </button>
+
+  <!-- Application Scripts -->
+  <script src="./app.js"></script>
 </body>
 </html>
